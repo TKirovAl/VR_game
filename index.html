@@ -37,6 +37,8 @@
             <!-- Удалена текстура земли -->
         </a-assets>
         <a-sky src="#skyTexture"></a-sky>
+        <img id="boxTexture" src="box-texture.jpg">
+        <img id="sphereTexture" src="sphere-texture.jpg">
         <!-- Заменено изображение на цвет -->
         <a-plane src="ground.jpg" rotation="-90 0 0" width="300" height="300" repeat="10 10"></a-plane>
         <a-camera position="0 1.6 -5" id="playerCamera">
@@ -105,7 +107,7 @@
                     const box = document.createElement('a-box');
                     box.setAttribute('position', `${x} ${y} ${z}`);
                     box.setAttribute('rotation', '0 45 0');
-                    box.setAttribute('color', '#4CC3D9');
+                    box.setAttribute('material', 'src: #boxTexture'); // Применяем текстур
                     box.setAttribute('depth', '0.5');
                     box.setAttribute('height', '0.5');
                     box.setAttribute('width', '0.5');
@@ -115,7 +117,7 @@
                     const sphere = document.createElement('a-sphere');
                     sphere.setAttribute('position', `${x} ${y} ${z}`);
                     sphere.setAttribute('radius', '0.5');
-                    sphere.setAttribute('color', '#EF2D5E');
+                    sphere.setAttribute('material', 'src: #sphereTexture');
                     sphere.setAttribute('collectible', '');
                     scene.appendChild(sphere);
                 }
